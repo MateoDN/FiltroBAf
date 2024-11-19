@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 import types
+import numpy as np
+from dataClasses import *
 
 # Ruta relativa al archivo dentro de la carpeta "data"
 base_dir = os.path.dirname(os.path.abspath(__file__))  # Carpeta donde está `filtro.py`
@@ -64,3 +66,6 @@ for empresa, instancia in clases_por_empresa.items():
         if not metodo.startswith("__") and callable(getattr(instancia, metodo)):  # Ignorar métodos internos
             metodo_func = getattr(instancia, metodo)
             print(f"Resultado del método {metodo}: {metodo_func()}")
+
+
+
